@@ -81,19 +81,19 @@ let scrabbleScore = function(word){
 let simpleScoreObj = {
   name:"Simple Score",
   description: "Each letter is worth 1 point.",
-  scorerFunction:simpleScore
+  scoringFunction:simpleScore
 }
 
 let vowelBonusObj = {
   name:"Bonus Vowels",
   description: "Vowels are 3 pts, consonants are 1 pt.",
-  scorerFunction: vowelBonusScore
+  scoringFunction: vowelBonusScore
 }
 
 let scrabbleObj = {
   name:"Scrabble",
   description: "The traditional scoring algorithm.",
-  scorerFunction: scrabbleScore
+  scoringFunction: scrabbleScore
 }
 
 
@@ -124,7 +124,7 @@ function transform(objectA) {
 function runProgram() {
   let word = initialPrompt();
   let algorithm = scorerPrompt(); 
-  let score = algorithm.scorerFunction(word);
+  let score = algorithm.scoringFunction(word);
   console.log(`Score for '${word}': ${score}`);
 }
 

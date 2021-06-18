@@ -14,7 +14,7 @@ describe("Scrabble Scorer solution", function() {
 	});
 
 	it("transform returns an object with letter keys", function() {
-		let transformedObj = solution.transform(solution.oldPointStructure);
+		let transformedObj = solution.transformrmedObj = solution.transform(solution.oldPointStructure);
 		let letterKeys = Object.keys(transformedObj);
 		
 		let lettersEx = /[a-z]/g;

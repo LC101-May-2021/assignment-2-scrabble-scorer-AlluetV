@@ -13,7 +13,7 @@ const oldPointStructure = {
 };
 
 let newPointStructure = transform(oldPointStructure);
-//console.log(newPointStructure);
+console.log(newPointStructure);
 
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
@@ -67,7 +67,7 @@ let vowelBonusScore = function(word){
 
 //console.log(vowelBonusScore("pa"));
 let scrabbleScore = function(word){
-  word = word.toUpperCase();
+  word = word.toLowerCase();
   let score = 0;
   for( let letter of word){
     score += newPointStructure[letter];
@@ -112,7 +112,7 @@ function transform(objectA) {
   let newObj = {' ': 0};
   for(let num in objectA){
     for(let letter of objectA[num]){
-      newObj[letter] = Number(num);
+      newObj[letter.toLowerCase()] = Number(num);
     }
   }
   return newObj;
